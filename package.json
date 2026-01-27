@@ -1,5 +1,5 @@
 {
-  "name": "newway-mission",
+  "name": "prayers",
   "version": "1.0.0",
   "description": "프로젝트 관련 문서는 기능별로 분리되어 있습니다. 아래 링크를 통해 원하는 문서를 확인하세요.",
   "main": "index.js",
@@ -17,16 +17,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yjineey/newway-mission.git"
+    "url": "git+https://github.com/yjineey/prayers.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/yjineey/newway-mission/issues"
+    "url": "https://github.com/yjineey/prayers/issues"
   },
-  "homepage": "https://github.com/yjineey/newway-mission#readme",
+  "homepage": "https://github.com/yjineey/prayers#readme",
   "engines": {
     "node": ">=18.18.0",
     "npm": ">=9.0.0"

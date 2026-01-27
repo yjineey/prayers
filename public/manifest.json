@@ -1,22 +1,22 @@
 {
   "name": "NW기도",
   "short_name": "NW기도",
-  "start_url": "/newway-mission/",
-  "scope": "/newway-mission/",
+  "start_url": "/prayers/",
+  "scope": "/prayers/",
   "display": "standalone",
   "background_color": "#262728",
   "theme_color": "#262728",
   "orientation": "portrait",
-  "id": "/newway-mission/",
+  "id": "/prayers/",
   "icons": [
     {
-      "src": "/newway-mission/logo/newwaychurch-logo.jpg",
+      "src": "/prayers/logo/newwaychurch-logo.jpg",
       "sizes": "192x192",
       "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "/newway-mission/logo/newwaychurch-logo.jpg",
+      "src": "/prayers/logo/newwaychurch-logo.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any"

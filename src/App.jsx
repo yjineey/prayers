@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <Router basename="/newway-mission">
+    <Router basename="/prayers">
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Header theme={theme} toggleTheme={toggleTheme} />
