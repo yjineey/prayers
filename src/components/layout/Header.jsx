@@ -15,7 +15,7 @@ function Header({ theme, toggleTheme }) {
                 className="w-8 h-8 object-contain rounded-lg invert dark:invert-0"
               />
               <h1 className="text-lg font-semibold text-gray-900 dark:text-white transition-colors">
-                보혈선포문 · 기도문
+                뉴웨이교회
               </h1>
             </Link>
 
