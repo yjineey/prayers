@@ -1,6 +1,6 @@
 {
-  "name": "NW기도",
-  "short_name": "NW기도",
+  "name": "뉴웨이교회",
+  "short_name": "뉴웨이교회",
   "start_url": "/prayers/",
   "scope": "/prayers/",
   "display": "standalone",
