@@ -1654,7 +1654,7 @@ function Home() {
   const [selectedTab, setSelectedTab] = useState(initialTab);
 
   return (
-    <PageLayout title="선포기도문">
+    <PageLayout >
       {selectedDeclaration ? (
         <>
           {/* 셀렉트 박스 */}
