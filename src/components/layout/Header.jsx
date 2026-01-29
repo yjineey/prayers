@@ -11,11 +11,11 @@ function Header({ theme, toggleTheme }) {
             <Link to="/" className="flex items-center gap-3 group">
               <img
                 src={`${import.meta.env.BASE_URL}logo/nw-logo.png`}
-                alt="뉴웨이교회 로고"
+                alt="로고"
                 className="w-8 h-8 object-contain rounded-lg invert dark:invert-0"
               />
               <h1 className="text-lg font-semibold text-gray-900 dark:text-white transition-colors">
-                보혈선포문
+                보혈선포문 · 기도문
               </h1>
             </Link>
 

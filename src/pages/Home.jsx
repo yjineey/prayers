@@ -1636,15 +1636,19 @@ function Home() {
     },
   ];
 
-  // 표시할 id 순서 배열
-  const displayOrder = [1, 2, 3, 4, 5, 6, 9];
+  // 표시할 id 순서 배열 (1~6번과 7~14번으로 분리)
+  const displayOrder1 = [1, 2, 3, 4, 5, 6];
+  const displayOrder2 = [7, 8, 9, 10, 11, 12, 13, 14];
 
   // 순서대로 필터링된 리스트
-  const filteredDeclarationList = displayOrder
+  const filteredDeclarationList1 = displayOrder1
+    .map((id) => declarationList.find((d) => d.id === id))
+    .filter(Boolean);
+  const filteredDeclarationList2 = displayOrder2
     .map((id) => declarationList.find((d) => d.id === id))
     .filter(Boolean);
 
-  const initialDeclaration = filteredDeclarationList[0] || null;
+  const initialDeclaration = filteredDeclarationList1[0] || null;
   const initialTab = initialDeclaration?.sections
     ? Object.keys(initialDeclaration.sections)[0]
     : 'intro';
@@ -1658,33 +1662,77 @@ function Home() {
       {selectedDeclaration ? (
         <>
           {/* 셀렉트 박스 */}
-          <div className="mb-6 relative">
-            <select
-              value={selectedDeclaration?.id || ''}
-              onChange={(e) => {
-                const selected = declarationList.find(
-                  (d) => d.id === parseInt(e.target.value)
-                );
-                if (selected) {
-                  setSelectedDeclaration(selected);
-                  // sections가 있는 경우 첫 번째 탭으로 초기화
-                  if (selected.sections) {
-                    const firstTab = Object.keys(selected.sections)[0];
-                    setSelectedTab(firstTab);
+          <div className="mb-6 grid grid-cols-2 gap-4">
+            {/* 첫 번째 셀렉트박스 (1~6번) */}
+            <div className="relative">
+              <select
+                value={selectedDeclaration && displayOrder1.includes(selectedDeclaration.id) ? selectedDeclaration.id : ''}
+                onChange={(e) => {
+                  const selected = declarationList.find(
+                    (d) => d.id === parseInt(e.target.value)
+                  );
+                  if (selected) {
+                    setSelectedDeclaration(selected);
+                    // sections가 있는 경우 첫 번째 탭으로 초기화
+                    if (selected.sections) {
+                      const firstTab = Object.keys(selected.sections)[0];
+                      setSelectedTab(firstTab);
+                    }
                   }
-                }
-              }}
-              className="w-full px-4 py-3 bg-white dark:bg-[#252525] rounded-lg shadow-sm border border-gray-200 dark:border-[#333333] text-sm font-medium text-gray-900 dark:text-white appearance-none cursor-pointer hover:bg-gray-50 dark:hover:bg-[#2d2d2d] transition-colors"
-              style={{ wordBreak: 'keep-all' }}
-            >
-              {filteredDeclarationList.map((declaration) => (
-                <option key={declaration.id} value={declaration.id}>
-                  {declaration.title}
-                </option>
-              ))}
-            </select>
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-              <ChevronDown className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+                }}
+                className={`w-full px-4 py-3 bg-white dark:bg-[#252525] rounded-lg shadow-sm border border-gray-200 dark:border-[#333333] text-sm font-medium appearance-none cursor-pointer hover:bg-gray-50 dark:hover:bg-[#2d2d2d] transition-colors ${
+                  selectedDeclaration && displayOrder1.includes(selectedDeclaration.id)
+                    ? 'text-gray-900 dark:text-white'
+                    : 'text-gray-400 dark:text-gray-500'
+                }`}
+                style={{ wordBreak: 'keep-all' }}
+              >
+                <option value="">보혈선포문 선택</option>
+                {filteredDeclarationList1.map((declaration) => (
+                  <option key={declaration.id} value={declaration.id}>
+                    {declaration.title}
+                  </option>
+                ))}
+              </select>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                <ChevronDown className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+              </div>
+            </div>
+
+            {/* 두 번째 셀렉트박스 (7~14번) */}
+            <div className="relative">
+              <select
+                value={selectedDeclaration && displayOrder2.includes(selectedDeclaration.id) ? selectedDeclaration.id : ''}
+                onChange={(e) => {
+                  const selected = declarationList.find(
+                    (d) => d.id === parseInt(e.target.value)
+                  );
+                  if (selected) {
+                    setSelectedDeclaration(selected);
+                    // sections가 있는 경우 첫 번째 탭으로 초기화
+                    if (selected.sections) {
+                      const firstTab = Object.keys(selected.sections)[0];
+                      setSelectedTab(firstTab);
+                    }
+                  }
+                }}
+                className={`w-full px-4 py-3 bg-white dark:bg-[#252525] rounded-lg shadow-sm border border-gray-200 dark:border-[#333333] text-sm font-medium appearance-none cursor-pointer hover:bg-gray-50 dark:hover:bg-[#2d2d2d] transition-colors ${
+                  selectedDeclaration && displayOrder2.includes(selectedDeclaration.id)
+                    ? 'text-gray-900 dark:text-white'
+                    : 'text-gray-400 dark:text-gray-500'
+                }`}
+                style={{ wordBreak: 'keep-all' }}
+              >
+                <option value="">기도문 선택</option>
+                {filteredDeclarationList2.map((declaration) => (
+                  <option key={declaration.id} value={declaration.id}>
+                    {declaration.title}
+                  </option>
+                ))}
+              </select>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                <ChevronDown className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+              </div>
             </div>
           </div>
 
