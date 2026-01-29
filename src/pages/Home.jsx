@@ -1,11 +1,6 @@
-// import BloodDeclaration from './BloodDeclaration';
-
-// function Home() {
-//   return <BloodDeclaration />;
-// }
 import { useState } from 'react';
 import PageLayout from '../components/layout/PageLayout';
-import { Flame, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 function Home() {
 
