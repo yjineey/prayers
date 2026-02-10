@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -30,15 +26,12 @@ function App() {
     <Router basename="/prayers">
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
-        <Header theme={theme} toggleTheme={toggleTheme} />
+        {/* <Header theme={theme} toggleTheme={toggleTheme} /> */}
 
         <main className="flex-1 mobile-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route
-              path="/blood-declaration"
-              element={<Home />}
-            />
+            <Route path="/blood-declaration" element={<Home />} />
           </Routes>
         </main>
 
